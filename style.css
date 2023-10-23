@@ -1,0 +1,199 @@
+*::after,
+*::before,
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+body{
+  margin: 0 auto;
+  max-width: 1500px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #333;
+}
+
+/* carrito */
+
+.iconoCarrito{
+  width:45px;
+  stroke: #000;
+  cursor: pointer;
+}
+
+.contenedorCarrito{
+  position: relative;
+}
+
+.contadorProducto {
+  position: absolute;
+  top: 55%;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color: beige;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: small;
+}
+
+.contenedor-productos{
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 600px;
+  background-color: aliceblue;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+  border-radius: 50px;
+}
+
+.carritoEnSi{
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+.infoProductoCarrito{
+  display: flex;
+  justify-content: space-around;
+  flex: 0.8;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgb(114, 114, 114);
+}
+
+.cerrarCarrito{
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.precioTotalCarrito{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.infoProductoCarrito{
+  display: flex;
+  align-items: center;
+
+}
+
+.cantidadProductoCarrito{
+  font-size: large;
+  font-weight: 400;
+}
+
+.tituloProductoCarrito{
+  font-size: large;
+  font-weight: 400;
+}
+
+.precioProductoCarrito{
+  font-size:20px;
+  font-weight: 400;
+
+}
+
+.precioTotalCarrito{
+  display: flex;
+  align-items: center;
+}
+
+.totalAPagar{
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.cruzCerrarCarrito:hover{
+  stroke: red;
+  cursor: pointer;
+}
+
+
+.hidden-cart{
+  display: none;
+}
+/* fin estilos carrito */
+
+
+
+
+img{
+  width: 100%;
+}
+
+/* header */
+
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0 40px 0;
+}
+
+
+main{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.producto {
+  border-radius: 10px;
+
+}
+.producto img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  transition: all 2s;
+}
+
+.producto:hover{
+  box-shadow: 0 10px 20px rgb(0, 0, 0, 0.20);
+}
+
+/* escalado de imagen (se trabaja la imagen como su contenedor figure) */
+.producto figure {
+  overflow: hidden;
+}
+
+.producto:hover img{
+  transform:scale(1.2);
+}
+
+
+.producto__elementos{
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+  gap: 12px;
+}
+
+.precio{
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.producto__elementos button{
+  border: none;
+  background: none;
+  background-color: #333;
+  color: rgba(245, 245, 30, 0.889);
+  border-radius: 10px;
+  height: 30px;
+  cursor: pointer;
+}
