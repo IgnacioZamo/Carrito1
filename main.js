@@ -23,9 +23,21 @@ listaProductos.addEventListener('click', e=>{
             precio: producto.querySelector('p').textContent
 
         }
+        const existencia = productosEnCarrito.some(producto => producto.titulo === infoProducto.titulo);
+        if (existencia){
+            const productos = productosEnCarrito.map(producto => {
+                if(producto.titulo === infoProducto.titulo){
+                producto.cantidad++;
+            return producto;
+            } else{
+                return producto;
+            }
+        });
+            productosEnCarrito = [...productos]
+        } else {
 
         productosEnCarrito = [...productosEnCarrito, infoProducto]
-
+        }
         showHTML();
         }
 })
