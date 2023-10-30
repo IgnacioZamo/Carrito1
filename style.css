@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box
+  
 }
 
 body{
@@ -11,6 +12,7 @@ body{
   max-width: 1500px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #333;
+
 }
 
 /* carrito */
@@ -46,7 +48,6 @@ body{
   top: 70px;
   right: 0;
   width: 600px;
-  background-color: aliceblue;
   z-index: 1;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
   border-radius: 50px;
