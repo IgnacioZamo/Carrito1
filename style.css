@@ -50,7 +50,9 @@ body{
   z-index: 1;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
   border-radius: 50px;
+
 }
+
 
 .carritoEnSi{
   display: flex;
@@ -125,6 +127,7 @@ body{
 
 .hidden-cart{
   display: none;
+  border: 1px solid black;
 }
 /* fin estilos carrito */
 

@@ -11,6 +11,8 @@ const listaProductos = document.querySelector('.contenedorProductos');
 const filaProducto = document.querySelector('.filaProducto');
 
 let productosEnCarrito = [];
+const valorTotal = document.querySelector(".totalAPagar");
+const contadorProductos = document.querySelector("#contador--producto")
 
 
 listaProductos.addEventListener('click', e=>{
@@ -42,10 +44,26 @@ listaProductos.addEventListener('click', e=>{
         }
 })
 
+//eliminar productos del carrito apretando en la cruz ↓↓
+filaProducto.addEventListener("click",e=>{
+    if(e.target.classList.contains("cruzCerrarCarrito")){
+        const producto = e.target.closest(".carritoEnSi");
+        const titulo = producto.querySelector("p").textContent;
+
+        productosEnCarrito = productosEnCarrito.filter(
+            producto => producto.titulo !== titulo
+        );
+        showHTML();
+        }
+
+    })
 
 const showHTML = () =>{
     
     filaProducto.innerHTML='';
+    let valor = 0;
+    let contadorP = 0;
+
     productosEnCarrito.forEach(productoo =>{
     const contenedorCarritoProducto = document.createElement("div");
     contenedorCarritoProducto.classList.add("carritoEnSi");
@@ -61,9 +79,14 @@ const showHTML = () =>{
                                         </svg>
                                     </div>
                                     </div>`;
-
+    
     filaProducto.append(contenedorCarritoProducto);
 
-})
+    valor = valor + parseInt(productoo.cantidad * productoo.precio.slice(1));
+    contadorP = contadorP + productoo.cantidad;
 
-}
+});
+valorTotal.innerText = `$${valor}`
+contadorProductos.innerText = contadorP
+
+};
